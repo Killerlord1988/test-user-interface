@@ -1,0 +1,401 @@
+:root {
+  --icon-color: #7F8489;
+  --body-color: #1C1E22;
+  --blue-color: #0E9BEF;
+  --bg-gradient-color: linear-gradient(180deg, #353A40 0%, #16171B 100%);
+  --button-gradient-color: linear-gradient(320.66deg, #2F353A 14.75%, #1C1F22 84.81%);
+  --button-inside-gradient-color: linear-gradient(318.21deg, #2C3036 14.05%, #31343C 85.29%);
+  --picker-gradient-color: linear-gradient(320.66deg, #0172BE 14.75%, #0F9BEE 84.81%);
+  --active-gradient-color: linear-gradient(320.66deg, #016BB8 14.75%, #11A8FD 84.81%);
+  --hover-gradient-color: linear-gradient(320.66deg, #2A87D3 14.75%, #1F66A4 45.12%, #113C67 84.81%);
+  --line-gradient-color: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 48.67%, rgba(255, 255, 255, 0.04) 59.86%), linear-gradient(89.97deg, #016BB8 2.65%, #0782DB 30.1%, #0F9CEB 59.17%, #11A8FD 101.95%);
+  --circle-gradient-color: conic-gradient(from 90deg at 45.18% 50.04%, #005696 -91.86deg, #11A8FD 41.25deg, #005696 268.14deg, #11A8FD 401.25deg);
+  --button-shadow: 7px 7px 30px #1F2427, -7px -7px 30px #485057;
+  --button-hover-shadow: 14px 14px 40px rgba(16, 16, 18, 0.75), -7px -7px 30px #262E32;
+  --button-activate-shadow: 10px 15px 40px rgba(0, 0, 0, 0.5), -10px -15px 40px rgba(82, 89, 94, 0.5);
+  --color-font: #ffffff;
+  --first-font-family: "Lato", "Arial", sans-serif;
+  --second-font-family: "Gilroy", "Arial", sans-serif;
+}
+
+@font-face {
+  font-weight: 800;
+  font-family: "Gilroy";
+  font-style: normal;
+  src: url("../fonts/Gilroy-Black.woff2") format("woff2"),
+    url("../fonts/Gilroy-Black.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 500;
+  font-family: "Gilroy";
+  font-style: normal;
+  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"),
+    url("../fonts/Gilroy-Medium.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 800;
+  font-family: "Lato";
+  font-style: normal;
+  src: url("../fonts/Lato-Black.woff2") format("woff2"),
+    url("../fonts/Lato-Black.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: "Lato";
+  font-style: normal;
+  src: url("../fonts/Lato-Regular.woff2") format("woff2"),
+    url("../fonts/Lato-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 21px;
+  font-family: var(--first-font-family);
+  color: var(--color-font);
+  background-color: var(--body-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  background: url("img/icon-button.svg");
+  box-shadow: var(--button-shadow);
+}
+
+.button:hover {
+  background: url("img/icon-button-hover.svg");
+  box-shadow: var(--button-hover-shadow);
+  background-size: cover;
+}
+
+.button:active {
+  background: url("img/icon-button-activate.svg");
+  box-shadow: var(--button-activate-shadow);
+  background-size: cover;
+}
+
+.interface {
+  margin-left: auto;
+  margin-right: auto;
+  width: 494px;
+  background: var(--bg-gradient-color);
+  border-radius: 60px;
+  margin-bottom: 100px;
+}
+
+.user-control {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+.user-control-button {
+  width: 63px;
+  height: 63px;
+}
+
+.user-control-button-menu svg {
+  fill: var(--icon-color);
+  stroke: var(--icon-color);
+}
+
+.user-control-button-menu:hover svg {
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.user-control-button-user svg {
+  stroke: var(--icon-color);
+}
+
+.user-control-button-user:hover svg {
+  stroke: #ffffff;
+}
+
+.interface-small {
+  background: var(--bg-gradient-color);
+  border-radius: 60px;
+  padding: 32px 40px;
+  position: relative;
+}
+
+.interface-small::before {
+  position: absolute;
+  content: "";
+  background-color: var(--body-color);
+  width: 60px;
+  height: 4px;
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  top: 16px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.interface-info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 66px;
+}
+
+.interface-title {
+  margin: 0;
+  margin-bottom: 8px;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.interface-info {
+  margin: 0;
+  width: 160px;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--icon-color);
+}
+
+.interface-small-button-control {
+  width: 80px;
+  height: 80px;
+  background-size: contain;
+}
+
+.interface-small-button-control svg {
+  fill: var(--icon-color);
+}
+
+.interface-small-button-control:hover svg {
+  fill: #ffffff;
+}
+
+.round-regulator {
+  position: relative;
+  width: 376px;
+  height: 376px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 56px;
+}
+
+.round-regulator-background {
+  position: absolute;
+  left: 51%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 315px;
+  height: 315px;
+  background: linear-gradient(318.21deg, #202428 14.05%, #131314 85.29%);
+  box-shadow: var(--button-activate-shadow);
+  border-radius: 50%;
+}
+
+.round-regulator-index {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  cursor: pointer;
+  background-image: url("img/icon-round-regulator.svg");
+  background-position: center;
+  background-size: contain;
+  width: 376px;
+  height: 345px;
+}
+
+.round-regulator-text {
+  position: absolute;
+  left: 51%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.round-regulator-temperture {
+  margin: 0;
+  font-family: var(--second-font-family);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.round-regulator-status {
+  margin: 0;
+  font-family: var(--second-font-family);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 14px;
+  text-align: center;
+}
+
+.fan-speed-regulator {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+}
+
+.fan-speed-title {
+  margin: 0;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* customize range slider */
+
+.noUi-handle {
+  width: 28px;
+  height: 28px;
+  background: none;
+  border-radius: 50%;
+  box-shadow: none;
+  border: none;
+}
+
+.noUi-handle::before,
+.noUi-handle::after {
+  display: none;
+}
+
+.noUi-touch-area {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: url("img/icon-picker.svg");
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: var(--button-shadow);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -5px;
+}
+
+.noUi-target {
+  border: none;
+  width: 100%;
+  height: 6px;
+  background: var(--body-color);
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.75), inset -2px -2px 2px #4E5154;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-radius: 100px;
+}
+
+.noUi-connect {
+  background: var(--line-gradient-color);
+}
+
+.noUi-marker {
+  display: none;
+}
+
+.noUi-value {
+  font-size: 14px;
+  line-height: 17px;
+  color: #7F8489;
+}
+
+.noUi-pips-horizontal {
+  top: -50px;
+}
+
+.mode-title {
+  margin: 0;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+}
+
+.mode-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mode-button-containder {
+  display: flex;
+  flex-direction: column;
+}
+
+.mode-button-name {
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #7F8489;
+}
+
+.mode-button {
+  width: 80px;
+  height: 80px;
+  background-size: contain;
+}
+
+.mode-button-auto svg {
+  fill: #7F8489;
+}
+
+.mode-button-auto:hover svg {
+  fill: #ffffff;
+}
+
+.mode-button-dry svg,
+.mode-button-cool svg,
+.mode-button-program svg {
+  fill: #7F8489;
+  stroke: #7F8489;
+}
+
+.mode-button-dry:hover svg,
+.mode-button-cool:hover svg,
+.mode-button-program:hover svg {
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+/* style active button */
+
+.button-active {
+  background: url("img/icon-button-activate.svg");
+  box-shadow: var(--button-activate-shadow);
+  background-size: cover;
+}
+
+.button-active svg {
+  fill: #ffffff;
+}
